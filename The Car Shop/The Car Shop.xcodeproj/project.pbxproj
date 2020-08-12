@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		524F3A4124E428B000696227 /* CategoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524F3A4024E428B000696227 /* CategoryHandler.swift */; };
+		524F3A4524E42C5000696227 /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524F3A4424E42C5000696227 /* CategoryData.swift */; };
 		526A564C24E3754500B37E12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A564B24E3754500B37E12 /* AppDelegate.swift */; };
 		526A564E24E3754500B37E12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A564D24E3754500B37E12 /* SceneDelegate.swift */; };
 		526A565324E3754500B37E12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526A565124E3754500B37E12 /* Main.storyboard */; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		094387BC0BC3E093995E389B /* Pods-The Car Shop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Car Shop.debug.xcconfig"; path = "Target Support Files/Pods-The Car Shop/Pods-The Car Shop.debug.xcconfig"; sourceTree = "<group>"; };
 		10FEF9B56103516B6A87ECC3 /* Pods_The_Car_Shop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Car_Shop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		524F3A4024E428B000696227 /* CategoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHandler.swift; sourceTree = "<group>"; };
+		524F3A4424E42C5000696227 /* CategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryData.swift; sourceTree = "<group>"; };
 		526A564824E3754500B37E12 /* The Car Shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Car Shop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		526A564B24E3754500B37E12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		526A564D24E3754500B37E12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				526A565424E3754500B37E12 /* The_Car_Shop.xcdatamodeld */,
+				524F3A4024E428B000696227 /* CategoryHandler.swift */,
 			);
 			path = LocalPersistentData;
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				529A67C424E3DA490052BCC3 /* CarData.swift */,
+				524F3A4424E42C5000696227 /* CategoryData.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -350,9 +356,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				526A565624E3754500B37E12 /* The_Car_Shop.xcdatamodeld in Sources */,
+				524F3A4524E42C5000696227 /* CategoryData.swift in Sources */,
 				529A67B024E3CC380052BCC3 /* CarListView.swift in Sources */,
 				529A67AD24E3CC380052BCC3 /* CarListLocalDataManager.swift in Sources */,
 				529A67C024E3CE8B0052BCC3 /* CarDetailWireFrame.swift in Sources */,
+				524F3A4124E428B000696227 /* CategoryHandler.swift in Sources */,
 				529A67B124E3CC380052BCC3 /* CarListRemoteDataManager.swift in Sources */,
 				526A564C24E3754500B37E12 /* AppDelegate.swift in Sources */,
 				526A564E24E3754500B37E12 /* SceneDelegate.swift in Sources */,

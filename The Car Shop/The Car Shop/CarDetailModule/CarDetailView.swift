@@ -22,6 +22,7 @@ class CarDetailView: UIViewController {
     
     @IBOutlet weak var carouselView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addCategoryButton: UIButton!
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -71,7 +72,7 @@ class CarDetailView: UIViewController {
     }
     
     func setupUI() {
-        self.detailArray = [self.carData.name,self.carData.model, self.carData.price, self.carData.status, self.carData.year, self.getDate(timestamp: self.carData.dateReleased), self.carData.seats, self.carData.type]
+        self.detailArray = [self.carData.name,self.carData.model, "$ \(self.carData.price)", self.carData.status, self.carData.year, self.getDate(timestamp: self.carData.dateReleased), self.carData.seats, self.carData.type]
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.reloadData()
@@ -80,7 +81,7 @@ class CarDetailView: UIViewController {
             for i in 0..<10 {
                 if i < self.carData.media.count {
                     let url = self.carData.media[i].stringValue
-                    let slide = ZKCarouselSlide(image: UIImage(), title: self.carData.model, description: self.carData.year)
+                    let slide = ZKCarouselSlide(image: UIImage(named: "thecarshop-white") ?? UIImage(), title: self.carData.model, description: "$ \(self.carData.price)")
                     self.downloadImage(with: url, slide: slide)
                     carousel.slides.append(slide)
                 }
