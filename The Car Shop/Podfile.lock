@@ -3,6 +3,7 @@ PODS:
   - AlamofireObjectMapper (5.2.1):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
+  - FCAlertView (1.4.0)
   - IQKeyboardManagerSwift (6.5.6)
   - Kingfisher (5.14.1):
     - Kingfisher/Core (= 5.14.1)
@@ -15,6 +16,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (= 4.9)
   - AlamofireObjectMapper (~> 5.2)
+  - FCAlertView
   - IQKeyboardManagerSwift
   - Kingfisher
   - ObjectMapper
@@ -26,6 +28,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireObjectMapper
+    - FCAlertView
     - IQKeyboardManagerSwift
     - Kingfisher
     - ObjectMapper
@@ -36,6 +39,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
   AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
+  FCAlertView: fdddd63381898c1d1a5a20c9f084fbd2c6d12f8b
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
@@ -43,6 +47,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   ZKCarousel: e54cdf2a5da6400c7e95bd6df5cbb001dc28883e
 
-PODFILE CHECKSUM: 85e57faed2fed5ce5313f7ba404ab84c7743275d
+PODFILE CHECKSUM: 797af3d41c68e06f0598993fd1292bf4b0367da0
 
 COCOAPODS: 1.9.3

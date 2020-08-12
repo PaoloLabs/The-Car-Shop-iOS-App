@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import ZKCarousel
 import Kingfisher
+import FCAlertView
 
 class CarDetailView: UIViewController {
 
@@ -19,6 +20,9 @@ class CarDetailView: UIViewController {
     var carousel = ZKCarousel()
     var titleArray = ["Name","Model","Price","Status","Year","Date released","Seats","Category"]
     var detailArray = [String]()
+    let alert = FCAlertView()
+    var valueData = String()
+    var keyData = String()
     
     @IBOutlet weak var carouselView: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -29,6 +33,30 @@ class CarDetailView: UIViewController {
         super.viewDidLoad()
         self.setupNavigation()
         self.setupUI()
+    }
+    
+    @IBAction func addCategory(_ sender: UIButton) {
+        alert.colorScheme = .red
+        alert.addTextField(withPlaceholder: "Add Category") { (data) in
+            guard let value = data else { return }
+            if !value.isEmpty {
+                self.keyData = value
+            }
+        }
+        
+        alert.addTextField(withPlaceholder: "Add Value") { (data) in
+            guard let value = data else { return }
+            if !value.isEmpty {
+                self.valueData = value
+            }
+        }
+        
+        alert.showAlert(inView: self,
+                        withTitle: "Adding Category",
+                        withSubtitle: "Here you can add a new category and value",
+                        withCustomImage: nil,
+                        withDoneButtonTitle: nil,
+                        andButtons: nil)
     }
     
     func downloadImage(with urlString : String, slide: ZKCarouselSlide) {
@@ -72,6 +100,7 @@ class CarDetailView: UIViewController {
     }
     
     func setupUI() {
+        self.alert.delegate = self
         self.detailArray = [self.carData.name,self.carData.model, "$ \(self.carData.price)", self.carData.status, self.carData.year, self.getDate(timestamp: self.carData.dateReleased), self.carData.seats, self.carData.type]
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -124,5 +153,12 @@ extension CarDetailView: UITableViewDataSource {
         cell.textLabel?.text = self.titleArray[indexPath.row]
         cell.detailTextLabel?.text = self.detailArray[indexPath.row]
        return cell
+    }
+}
+
+extension CarDetailView: FCAlertViewDelegate {
+    func fcAlertDoneButtonClicked(_ alertView: FCAlertView!) {
+        // Update Data
+        
     }
 }

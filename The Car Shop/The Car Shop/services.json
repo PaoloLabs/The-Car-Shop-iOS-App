@@ -204,6 +204,7 @@
       "vin": "1FTEW1CG2FFC76494",
       "heading": "2015 Ford F-150 XLT",
       "miles": 63883,
+      "price": 63845,
       "data_source": "mc",
       "vdp_url": "https://www.mcreeford.net/inventory/used-vehicles/vehicle/1FTEW1CG2FFC76494/used-2015-Ford-F-150-Dickinson-TX",
       "carfax_1_owner": true,
@@ -855,6 +856,7 @@
       "vin": "1FD0X5HT6FEA84209",
       "heading": "2015 Ford F-550 SuperCab DRW 4WD",
       "miles": 9294,
+      "price": 12234,
       "data_source": "mc",
       "vdp_url": "https://www.battlefieldfordtrucksonline.com/2015-Ford-F550/Used-DumpTruck/Manassas-VA/12634220/Details.aspx",
       "carfax_1_owner": false,
@@ -930,6 +932,7 @@
         "engine_block": "V",
         "doors": 4,
         "cylinders": 8,
+        "std_seating": "4",
         "made_in": "United States",
         "trim_r": "Supercab 4WD DRW"
       }
