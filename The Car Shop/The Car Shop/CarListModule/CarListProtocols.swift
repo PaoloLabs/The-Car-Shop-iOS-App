@@ -40,6 +40,8 @@ protocol CarListInteractorInputProtocol: class {
     var presenter: CarListInteractorOutputProtocol? { get set }
     var localDatamanager: CarListLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: CarListRemoteDataManagerInputProtocol? { get set }
+    
+    func getDataFromRemoteDataManager()
 }
 
 protocol CarListDataManagerInputProtocol: class {
@@ -49,6 +51,7 @@ protocol CarListDataManagerInputProtocol: class {
 protocol CarListRemoteDataManagerInputProtocol: class {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: CarListRemoteDataManagerOutputProtocol? { get set }
+    func readJSONFile()
 }
 
 protocol CarListRemoteDataManagerOutputProtocol: class {

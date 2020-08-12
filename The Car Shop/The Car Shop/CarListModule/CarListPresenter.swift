@@ -21,6 +21,8 @@ extension CarListPresenter: CarListPresenterProtocol {
     
     // TODO: implement presenter methods
     func viewDidLoad() {
+        print("1")
+        interactor?.getDataFromRemoteDataManager()
     }
     
     func goCarDetailView() {

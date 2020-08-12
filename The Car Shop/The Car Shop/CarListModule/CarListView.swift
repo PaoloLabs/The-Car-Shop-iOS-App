@@ -22,6 +22,7 @@ class CarListView: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.viewDidLoad()
         self.setupUI()
     }
     

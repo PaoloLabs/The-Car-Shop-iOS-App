@@ -15,6 +15,11 @@ class CarListInteractor: CarListInteractorInputProtocol {
     var localDatamanager: CarListLocalDataManagerInputProtocol?
     var remoteDatamanager: CarListRemoteDataManagerInputProtocol?
 
+    func getDataFromRemoteDataManager() {
+        print("2")
+        remoteDatamanager?.readJSONFile()
+        
+    }
 }
 
 extension CarListInteractor: CarListRemoteDataManagerOutputProtocol {
