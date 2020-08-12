@@ -39,10 +39,10 @@ class CarListWireFrame: CarListWireFrameProtocol {
     }
     
     func goCarDetailView(with view: CarListViewProtocol?, carData: CarData) {
+        
         if let vc = view as? UIViewController {
-            print(carData.name)
-//            let carDetailView = CarDetailWireFrame.createCarDetailModule(with: carData)
-//            vc.navigationController?.pushViewController(carDetailView, animated: true)
+            let carDetailView = CarDetailWireFrame.createCarDetailModule(with: carData)
+            vc.navigationController?.pushViewController(carDetailView, animated: true)
         }
         
     }

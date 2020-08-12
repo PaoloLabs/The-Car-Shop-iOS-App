@@ -11,6 +11,6 @@ target 'The Car Shop' do
   pod 'IQKeyboardManagerSwift'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'AlamofireObjectMapper', '~> 5.2'
-
+  pod 'ZKCarousel'
   
 end

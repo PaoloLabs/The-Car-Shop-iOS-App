@@ -10,14 +10,14 @@ import Foundation
 import SwiftyJSON
 
 struct CarData {
-    var model: String
-    var price: String
-    var seats: String
-    var status: String
-    var year: String
-    var dateReleased: String // TIMESTAMP
-    var type: String
-    var name: String
-    var media: [JSON]
+    var model: String = ""
+    var price: String = ""
+    var seats: String = ""
+    var status: String = ""
+    var year: String = ""
+    var dateReleased: String = "" // TIMESTAMP
+    var type: String = ""
+    var name: String = ""
+    var media: [JSON] = [JSON]()
 }
 

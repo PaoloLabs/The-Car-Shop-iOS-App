@@ -12,7 +12,6 @@ import UIKit
 protocol CarDetailViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: CarDetailPresenterProtocol? { get set }
-    var carData: CarData { get set }
 }
 
 protocol CarDetailWireFrameProtocol: class {
