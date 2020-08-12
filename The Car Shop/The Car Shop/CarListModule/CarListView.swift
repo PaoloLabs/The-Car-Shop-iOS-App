@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import PKHUD
 
 class CarListView: UIViewController {
 
@@ -22,6 +23,7 @@ class CarListView: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        HUD.show(.progress)
         presenter?.viewDidLoad()
         self.setupUI()
     }
@@ -46,14 +48,13 @@ extension CarListView: CarListViewProtocol {
         self.tableData = carDataArray
         self.filteredTableData = self.tableData
         self.tableView.reloadData()
+        HUD.hide()
     }
-    
-    // TODO: implement view output methods
 }
 
 extension CarListView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.goCarDetailView()
+        presenter?.goCarDetailView(carData: self.filteredTableData[indexPath.row])
     }
 }
 
@@ -66,7 +67,6 @@ extension CarListView: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = self.filteredTableData[indexPath.row].name
         return cell
-        
     }
 }
 

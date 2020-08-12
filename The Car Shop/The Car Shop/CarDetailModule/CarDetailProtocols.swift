@@ -12,11 +12,12 @@ import UIKit
 protocol CarDetailViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: CarDetailPresenterProtocol? { get set }
+    var carData: CarData { get set }
 }
 
 protocol CarDetailWireFrameProtocol: class {
     // PRESENTER -> WIREFRAME
-    static func createCarDetailModule() -> UIViewController
+    static func createCarDetailModule(with carData: CarData) -> UIViewController
 }
 
 protocol CarDetailPresenterProtocol: class {

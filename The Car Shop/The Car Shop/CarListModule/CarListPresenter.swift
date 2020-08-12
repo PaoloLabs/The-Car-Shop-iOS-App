@@ -24,8 +24,8 @@ extension CarListPresenter: CarListPresenterProtocol {
         interactor?.getDataFromRemoteDataManager()
     }
     
-    func goCarDetailView() {
-        wireFrame?.goCarDetailView(with: view)
+    func goCarDetailView(carData: CarData) {
+        wireFrame?.goCarDetailView(with: view, carData: carData)
     }
     
 }

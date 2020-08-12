@@ -40,7 +40,8 @@ class CarListRemoteDataManager:CarListRemoteDataManagerInputProtocol {
                                   year: item["build"]["year"].stringValue,
                                   dateReleased: item["first_seen_at"].stringValue,
                                   type: item["buid"]["vehicle_type"].stringValue,
-                                  name: item["dealer"]["name"].stringValue)
+                                  name: item["dealer"]["name"].stringValue,
+                                  media: item["media"]["photo_links"].arrayValue)
             carDataArray.append(carData)
         }
         return carDataArray

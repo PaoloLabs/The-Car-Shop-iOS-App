@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 struct CarData {
     var model: String
@@ -17,5 +18,6 @@ struct CarData {
     var dateReleased: String // TIMESTAMP
     var type: String
     var name: String
+    var media: [JSON]
 }
 

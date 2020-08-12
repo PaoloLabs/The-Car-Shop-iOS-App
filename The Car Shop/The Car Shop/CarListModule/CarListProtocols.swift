@@ -18,7 +18,7 @@ protocol CarListViewProtocol: class {
 protocol CarListWireFrameProtocol: class {
     // PRESENTER -> WIREFRAME
     static func createCarListModule() -> UIViewController
-    func goCarDetailView(with view: CarListViewProtocol?)
+    func goCarDetailView(with view: CarListViewProtocol?, carData: CarData)
 }
 
 protocol CarListPresenterProtocol: class {
@@ -28,7 +28,7 @@ protocol CarListPresenterProtocol: class {
     var wireFrame: CarListWireFrameProtocol? { get set }
     
     func viewDidLoad()
-    func goCarDetailView()
+    func goCarDetailView(carData: CarData)
 
 }
 

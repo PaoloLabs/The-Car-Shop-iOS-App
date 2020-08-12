@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 class CarDetailWireFrame: CarDetailWireFrameProtocol {
-
-    class func createCarDetailModule() -> UIViewController {
+    
+    class func createCarDetailModule(with carData: CarData) -> UIViewController {
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "CarDetailView")
         if let view = viewController as? CarDetailView {
             let presenter: CarDetailPresenterProtocol & CarDetailInteractorOutputProtocol = CarDetailPresenter()
@@ -21,6 +21,7 @@ class CarDetailWireFrame: CarDetailWireFrameProtocol {
             let wireFrame: CarDetailWireFrameProtocol = CarDetailWireFrame()
             
             view.presenter = presenter
+            view.carData = carData
             presenter.view = view
             presenter.wireFrame = wireFrame
             presenter.interactor = interactor

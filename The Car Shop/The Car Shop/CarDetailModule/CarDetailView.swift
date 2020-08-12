@@ -13,14 +13,19 @@ class CarDetailView: UIViewController {
 
     // MARK: Properties
     var presenter: CarDetailPresenterProtocol?
+    var carData: CarData?
 
     // MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("PAOLO mira")
+//        print(carData?.name)
     }
+    
 }
 
 extension CarDetailView: CarDetailViewProtocol {
+    
     // TODO: implement view output methods
 }
