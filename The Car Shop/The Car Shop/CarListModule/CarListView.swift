@@ -1,16 +1,25 @@
 //
-//  CarsListViewController.swift
+//  CarListView.swift
 //  The Car Shop
 //
-//  Created by Paolo Ramos Mendez on 8/11/20.
+//  Created by Paolo Ramos Mendez on 8/12/20.
 //  Copyright © 2020 paololabs. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class CarsListViewController: UIViewController {
+class CarListView: UIViewController {
+
+    // MARK: Properties
+    var presenter: CarListPresenterProtocol?
+    var tableData = ["One","Two","Three","Twenty-One"]
+    var filteredTableData = [String]()
     
-    // MARK: - Lifecycle Methods
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
@@ -22,30 +31,26 @@ class CarsListViewController: UIViewController {
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
         navigationItem.titleView = imageView
-        self.filteredTableData = tableData
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.searchBar.delegate = self
+        self.filteredTableData = self.tableData
         self.tableView.reloadData()
     }
-    
-    // MARK: - Properties
-    var presenter: ViewToPresenterCarsListProtocol?
-    let tableData = ["One","Two","Three","Twenty-One"]
-    var filteredTableData = [String]()
-    
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
-    
-    
+
 }
 
-extension CarsListViewController: PresenterToViewCarsListProtocol{
-    // TODO: Implement View Output Methods
+extension CarListView: CarListViewProtocol {
+    // TODO: implement view output methods
 }
 
-extension CarsListViewController: UITableViewDelegate {
-    
+extension CarListView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.goCarDetailView()
+    }
 }
 
-extension CarsListViewController: UITableViewDataSource {
+extension CarListView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.filteredTableData.count
     }
@@ -53,13 +58,12 @@ extension CarsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = self.filteredTableData[indexPath.row]
-        print(tableData[indexPath.row])
         return cell
         
     }
 }
 
-extension CarsListViewController: UISearchBarDelegate {
+extension CarListView: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
@@ -79,5 +83,3 @@ extension CarsListViewController: UISearchBarDelegate {
     }
     
 }
-
-
