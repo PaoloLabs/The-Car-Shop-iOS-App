@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,15 +12,40 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash" translatesAutoresizingMaskIntoConstraints="NO" id="glg-k9-lR3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.80925029520000002" green="0.0017000157389999999" blue="0.17644223570000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thecarshop-white" translatesAutoresizingMaskIntoConstraints="NO" id="t6N-Yf-cxV">
+                                <rect key="frame" x="76" y="354" width="262" height="188"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="262" id="ZxJ-eq-SX3"/>
+                                    <constraint firstAttribute="height" constant="188" id="va7-HQ-7zz"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="glg-k9-lR3" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="1Y8-wr-ygz"/>
+                            <constraint firstItem="glg-k9-lR3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2BE-zN-QPg"/>
+                            <constraint firstItem="t6N-Yf-cxV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="a9s-zl-fcw"/>
+                            <constraint firstItem="t6N-Yf-cxV" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hdU-z3-cdd"/>
+                            <constraint firstItem="glg-k9-lR3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jct-pa-yj6"/>
+                            <constraint firstAttribute="bottom" secondItem="glg-k9-lR3" secondAttribute="bottom" id="z3q-cP-Yo7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Splash" width="414" height="736"/>
+        <image name="thecarshop-white" width="262" height="188"/>
+    </resources>
 </document>

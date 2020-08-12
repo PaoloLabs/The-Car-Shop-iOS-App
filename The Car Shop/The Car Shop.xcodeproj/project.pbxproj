@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		526A564C24E3754500B37E12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A564B24E3754500B37E12 /* AppDelegate.swift */; };
 		526A564E24E3754500B37E12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A564D24E3754500B37E12 /* SceneDelegate.swift */; };
-		526A565024E3754500B37E12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A564F24E3754500B37E12 /* ViewController.swift */; };
 		526A565324E3754500B37E12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526A565124E3754500B37E12 /* Main.storyboard */; };
 		526A565624E3754500B37E12 /* The_Car_Shop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 526A565424E3754500B37E12 /* The_Car_Shop.xcdatamodeld */; };
 		526A565824E3754600B37E12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 526A565724E3754600B37E12 /* Assets.xcassets */; };
 		526A565B24E3754600B37E12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526A565924E3754600B37E12 /* LaunchScreen.storyboard */; };
 		526A566624E3754600B37E12 /* The_Car_ShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A566524E3754600B37E12 /* The_Car_ShopTests.swift */; };
 		526A567224E3880E00B37E12 /* services.json in Resources */ = {isa = PBXBuildFile; fileRef = 526A567124E3880E00B37E12 /* services.json */; };
+		526A567824E38A2C00B37E12 /* CarsListContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A567324E38A2C00B37E12 /* CarsListContract.swift */; };
+		526A567924E38A2C00B37E12 /* CarsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A567424E38A2C00B37E12 /* CarsListPresenter.swift */; };
+		526A567A24E38A2C00B37E12 /* CarsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A567524E38A2C00B37E12 /* CarsListRouter.swift */; };
+		526A567B24E38A2C00B37E12 /* CarsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A567624E38A2C00B37E12 /* CarsListViewController.swift */; };
+		526A567C24E38A2C00B37E12 /* CarsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A567724E38A2C00B37E12 /* CarsListInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +36,6 @@
 		526A564824E3754500B37E12 /* The Car Shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Car Shop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		526A564B24E3754500B37E12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		526A564D24E3754500B37E12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		526A564F24E3754500B37E12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		526A565224E3754500B37E12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		526A565524E3754500B37E12 /* The_Car_Shop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = The_Car_Shop.xcdatamodel; sourceTree = "<group>"; };
 		526A565724E3754600B37E12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,6 +45,11 @@
 		526A566524E3754600B37E12 /* The_Car_ShopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_Car_ShopTests.swift; sourceTree = "<group>"; };
 		526A566724E3754600B37E12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		526A567124E3880E00B37E12 /* services.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = services.json; sourceTree = "<group>"; };
+		526A567324E38A2C00B37E12 /* CarsListContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListContract.swift; sourceTree = "<group>"; };
+		526A567424E38A2C00B37E12 /* CarsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListPresenter.swift; sourceTree = "<group>"; };
+		526A567524E38A2C00B37E12 /* CarsListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListRouter.swift; sourceTree = "<group>"; };
+		526A567624E38A2C00B37E12 /* CarsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListViewController.swift; sourceTree = "<group>"; };
+		526A567724E38A2C00B37E12 /* CarsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +94,7 @@
 				526A567024E375AE00B37E12 /* CORE DATA */,
 				526A564B24E3754500B37E12 /* AppDelegate.swift */,
 				526A564D24E3754500B37E12 /* SceneDelegate.swift */,
-				526A564F24E3754500B37E12 /* ViewController.swift */,
+				526A567D24E38A3000B37E12 /* CarsListModule */,
 				526A565124E3754500B37E12 /* Main.storyboard */,
 				526A565724E3754600B37E12 /* Assets.xcassets */,
 				526A565924E3754600B37E12 /* LaunchScreen.storyboard */,
@@ -111,6 +119,18 @@
 				526A565424E3754500B37E12 /* The_Car_Shop.xcdatamodeld */,
 			);
 			path = "CORE DATA";
+			sourceTree = "<group>";
+		};
+		526A567D24E38A3000B37E12 /* CarsListModule */ = {
+			isa = PBXGroup;
+			children = (
+				526A567324E38A2C00B37E12 /* CarsListContract.swift */,
+				526A567424E38A2C00B37E12 /* CarsListPresenter.swift */,
+				526A567524E38A2C00B37E12 /* CarsListRouter.swift */,
+				526A567624E38A2C00B37E12 /* CarsListViewController.swift */,
+				526A567724E38A2C00B37E12 /* CarsListInteractor.swift */,
+			);
+			path = CarsListModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,9 +236,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				526A565624E3754500B37E12 /* The_Car_Shop.xcdatamodeld in Sources */,
-				526A565024E3754500B37E12 /* ViewController.swift in Sources */,
+				526A567824E38A2C00B37E12 /* CarsListContract.swift in Sources */,
+				526A567B24E38A2C00B37E12 /* CarsListViewController.swift in Sources */,
 				526A564C24E3754500B37E12 /* AppDelegate.swift in Sources */,
+				526A567A24E38A2C00B37E12 /* CarsListRouter.swift in Sources */,
 				526A564E24E3754500B37E12 /* SceneDelegate.swift in Sources */,
+				526A567924E38A2C00B37E12 /* CarsListPresenter.swift in Sources */,
+				526A567C24E38A2C00B37E12 /* CarsListInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,7 +412,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.paololabs.The-Car-Shop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -406,7 +430,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.paololabs.The-Car-Shop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
