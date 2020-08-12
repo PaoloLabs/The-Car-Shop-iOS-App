@@ -25,12 +25,23 @@ final class CategoryHandler: NSObject {
         let category = NSManagedObject(entity: categoryEntity, insertInto: managedContext)
         category.setValue(key, forKey: "key")
         category.setValue(value, forKeyPath: "value")
-        //Now we have set all the values. The next step is to save them inside the Core Data
+        
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: self.entityName)
+        fetchRequest.predicate = NSPredicate(format: "key = %@", key)
         do {
-            try managedContext.save()
-           
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+            let test = try managedContext.fetch(fetchRequest)
+            if test.count == 0 {
+                //Now we have set all the values. The next step is to save them inside the Core Data
+                do {
+                    try managedContext.save()
+                   
+                } catch let error as NSError {
+                    print("Could not save. \(error), \(error.userInfo)")
+                }
+            }
+            
+        } catch {
+            print(error)
         }
     }
     
@@ -45,6 +56,8 @@ final class CategoryHandler: NSObject {
         //
         do {
             let result = try managedContext.fetch(fetchRequest)
+            print(result)
+
             var arrayData = [CategoryData]()
             for data in result as! [NSManagedObject] {
                 let item = CategoryData(key: data.value(forKey: "key") as! String, value: data.value(forKey: "value") as! String)
@@ -56,6 +69,28 @@ final class CategoryHandler: NSObject {
             return [CategoryData]()
         }
     }
+    
+    func searchData(criteria: String) -> [CategoryData] {
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        //Prepare the request of type NSFetchRequest  for the entity
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: self.entityName)
+        //fetchRequest.fetchLimit = 1
+        fetchRequest.predicate = NSPredicate(format: "key = %@", criteria)
+        do {
+            let result = try managedContext.fetch(fetchRequest)
+            var arrayData = [CategoryData]()
+            for data in result as! [NSManagedObject] {
+                let item = CategoryData(key: data.value(forKey: "key") as! String, value: data.value(forKey: "value") as! String)
+                arrayData.append(item)
+            }
+            return arrayData
+        } catch {
+            print("Failed")
+            return [CategoryData]()
+        }
+    }
+    
     
     func updateData(key: String, value: String, criteria: String) {
         //We need to create a context from this container

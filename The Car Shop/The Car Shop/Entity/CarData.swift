@@ -19,5 +19,7 @@ struct CarData {
     var type: String = ""
     var name: String = ""
     var media: [JSON] = [JSON]()
+    var key: String = ""
+    var value: String = ""
 }
 

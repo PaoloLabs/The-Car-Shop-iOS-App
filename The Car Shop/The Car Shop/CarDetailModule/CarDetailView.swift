@@ -98,13 +98,16 @@ class CarDetailView: UIViewController {
         imageView.contentMode = .scaleAspectFit
         navigationItem.titleView = imageView
     }
-    
-    func setupUI() {
-        self.alert.delegate = self
+    func customizeData() {
         self.detailArray = [self.carData.name,self.carData.model, "$ \(self.carData.price)", self.carData.status, self.carData.year, self.getDate(timestamp: self.carData.dateReleased), self.carData.seats, self.carData.type]
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.reloadData()
+    }
+    
+    func setupUI() {
+        self.alert.delegate = self
+        self.customizeData()
         self.carousel = {
             let carousel = ZKCarousel()
             for i in 0..<10 {
@@ -159,6 +162,15 @@ extension CarDetailView: UITableViewDataSource {
 extension CarDetailView: FCAlertViewDelegate {
     func fcAlertDoneButtonClicked(_ alertView: FCAlertView!) {
         // Update Data
+        CategoryHandler.sharedInstance.createCategory(key: self.keyData, value: self.valueData)
+        _ = CategoryHandler.sharedInstance.retrieveData()
+        self.carData.key = self.keyData
+        self.carData.value = self.valueData
+        self.titleArray.removeLast()
+        self.detailArray.removeLast()
+        self.titleArray.append(self.carData.key)
+        self.detailArray.append(self.carData.value)
+        self.tableView.reloadData()
         
     }
 }

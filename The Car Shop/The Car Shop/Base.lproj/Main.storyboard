@@ -19,18 +19,65 @@
                                 <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="zxv-dT-vlP">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="120" id="zxv-dT-vlP">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zxv-dT-vlP" id="71C-dN-JLE">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thecarshop-white" translatesAutoresizingMaskIntoConstraints="NO" id="v7M-xP-hu4">
+                                                    <rect key="frame" x="20" y="11" width="120" height="98"/>
+                                                    <color key="backgroundColor" red="0.60592025520000004" green="0.11053956299999999" blue="0.1215394065" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="qBX-F1-Uux"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOB-qs-EC9">
+                                                    <rect key="frame" x="148" y="11" width="246" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="23" id="jfG-gZ-k1o"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JS-g7-TGt">
+                                                    <rect key="frame" x="148" y="47" width="246" height="26"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P20-nr-vEe">
+                                                    <rect key="frame" x="148" y="86" width="246" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8JS-g7-TGt" firstAttribute="trailing" secondItem="P20-nr-vEe" secondAttribute="trailing" id="2Fa-6J-0FF"/>
+                                                <constraint firstItem="sOB-qs-EC9" firstAttribute="leading" secondItem="8JS-g7-TGt" secondAttribute="leading" id="8kJ-Mw-RzJ"/>
+                                                <constraint firstItem="8JS-g7-TGt" firstAttribute="top" secondItem="sOB-qs-EC9" secondAttribute="bottom" constant="13" id="9Hw-sn-lmg"/>
+                                                <constraint firstItem="v7M-xP-hu4" firstAttribute="leading" secondItem="71C-dN-JLE" secondAttribute="leadingMargin" id="Bia-Sh-f2a"/>
+                                                <constraint firstItem="P20-nr-vEe" firstAttribute="top" secondItem="8JS-g7-TGt" secondAttribute="bottom" constant="13" id="DO6-ZH-n49"/>
+                                                <constraint firstItem="v7M-xP-hu4" firstAttribute="top" secondItem="71C-dN-JLE" secondAttribute="topMargin" id="Hy4-Bv-lZf"/>
+                                                <constraint firstItem="8JS-g7-TGt" firstAttribute="leading" secondItem="P20-nr-vEe" secondAttribute="leading" id="PEG-1P-FoI"/>
+                                                <constraint firstItem="sOB-qs-EC9" firstAttribute="trailing" secondItem="71C-dN-JLE" secondAttribute="trailingMargin" id="T4R-kY-XDJ"/>
+                                                <constraint firstItem="v7M-xP-hu4" firstAttribute="bottom" secondItem="P20-nr-vEe" secondAttribute="bottom" id="YCM-8B-sJn"/>
+                                                <constraint firstItem="sOB-qs-EC9" firstAttribute="trailing" secondItem="8JS-g7-TGt" secondAttribute="trailing" id="d3O-9f-3zS"/>
+                                                <constraint firstItem="sOB-qs-EC9" firstAttribute="leading" secondItem="v7M-xP-hu4" secondAttribute="trailing" constant="8" id="e7i-IT-ZuE"/>
+                                                <constraint firstItem="v7M-xP-hu4" firstAttribute="top" secondItem="sOB-qs-EC9" secondAttribute="top" id="plD-f2-rGv"/>
+                                                <constraint firstItem="v7M-xP-hu4" firstAttribute="centerY" secondItem="8JS-g7-TGt" secondAttribute="centerY" id="uu7-z1-lSl"/>
+                                                <constraint firstItem="v7M-xP-hu4" firstAttribute="bottom" secondItem="71C-dN-JLE" secondAttribute="bottomMargin" id="zV2-56-DCC"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Jwd-Mh-MbN">
+                            <searchBar contentMode="redraw" searchBarStyle="prominent" translatesAutoresizingMaskIntoConstraints="NO" id="Jwd-Mh-MbN">
                                 <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -104,7 +151,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKE-Mq-QF7">
                                 <rect key="frame" x="0.0" y="817" width="414" height="45"/>
-                                <color key="backgroundColor" red="0.80925029520000002" green="0.0017000157389999999" blue="0.17644223570000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.60592025520000004" green="0.11053956299999999" blue="0.1215394065" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="dtv-0V-Ihm"/>
                                 </constraints>
@@ -160,4 +207,7 @@
             <point key="canvasLocation" x="289.85507246376812" y="-220.3125"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="thecarshop-white" width="262" height="188"/>
+    </resources>
 </document>

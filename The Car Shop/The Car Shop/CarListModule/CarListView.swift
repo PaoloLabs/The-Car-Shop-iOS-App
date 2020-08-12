@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import PKHUD
+import Kingfisher
 
 class CarListView: UIViewController {
 
@@ -40,6 +41,24 @@ class CarListView: UIViewController {
         self.filteredTableData = self.tableData
         self.tableView.reloadData()
     }
+    
+    func downloadImage(with urlString : String, imageView: UIImageView) {
+        guard let url = URL.init(string: urlString) else {
+            return
+        }
+        
+        let resource = ImageResource(downloadURL: url)
+
+        KingfisherManager.shared.retrieveImage(with: resource, options: nil, progressBlock: nil) { result in
+            switch result {
+            case .success(let value):
+                print("Image: \(value.image). Got from: \(value.cacheType)")
+                imageView.image = value.image
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
+    }
 
 }
 
@@ -65,8 +84,28 @@ extension CarListView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = self.filteredTableData[indexPath.row].name
+        let carData = self.filteredTableData[indexPath.row]
+        if let foundView = view.viewWithTag(1) as? UIImageView {
+            let url = (carData.media.count > 0) ? carData.media[0].stringValue : ""
+            self.downloadImage(with: url, imageView: foundView)
+            foundView.layer.cornerRadius = 10.0
+        }
+        if let name = view.viewWithTag(2) as? UILabel {
+            name.text = carData.name
+        }
+        if let model = view.viewWithTag(3) as? UILabel {
+            model.text = "Model: \(carData.model) - \(carData.year)"
+        }
+        if let status = view.viewWithTag(4) as? UILabel {
+            status.text = "Status: \(carData.status)"
+        }
+        
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120.0
     }
 }
 
