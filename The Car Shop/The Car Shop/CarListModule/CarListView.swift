@@ -13,8 +13,8 @@ class CarListView: UIViewController {
 
     // MARK: Properties
     var presenter: CarListPresenterProtocol?
-    var tableData = ["One","Two","Three","Twenty-One"]
-    var filteredTableData = [String]()
+    var tableData = [CarData]()
+    var filteredTableData = [CarData]()
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -42,6 +42,12 @@ class CarListView: UIViewController {
 }
 
 extension CarListView: CarListViewProtocol {
+    func getDataFromRemoteDataManager(with carDataArray: [CarData]) {
+        self.tableData = carDataArray
+        self.filteredTableData = self.tableData
+        self.tableView.reloadData()
+    }
+    
     // TODO: implement view output methods
 }
 
@@ -58,7 +64,7 @@ extension CarListView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = self.filteredTableData[indexPath.row]
+        cell.textLabel?.text = self.filteredTableData[indexPath.row].name
         return cell
         
     }
@@ -71,8 +77,8 @@ extension CarListView: UISearchBarDelegate {
             self.filteredTableData = self.tableData
         }
         else {
-            self.filteredTableData = self.tableData.filter { (data: String) -> Bool in
-               if data.lowercased().contains(searchText.lowercased()){
+            self.filteredTableData = self.tableData.filter { (data: CarData) -> Bool in
+                if data.name.lowercased().contains(searchText.lowercased()){
                   return true
                } else{
                   return false

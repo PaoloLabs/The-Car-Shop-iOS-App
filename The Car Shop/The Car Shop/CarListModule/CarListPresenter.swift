@@ -21,7 +21,6 @@ extension CarListPresenter: CarListPresenterProtocol {
     
     // TODO: implement presenter methods
     func viewDidLoad() {
-        print("1")
         interactor?.getDataFromRemoteDataManager()
     }
     
@@ -33,4 +32,7 @@ extension CarListPresenter: CarListPresenterProtocol {
 
 extension CarListPresenter: CarListInteractorOutputProtocol {
     // TODO: implement interactor utput methods
+    func getDataFromRemoteDataManager(with carDataArray: [CarData]) {
+        view?.getDataFromRemoteDataManager(with: carDataArray)
+    }
 }

@@ -19,7 +19,9 @@ class CarListRemoteDataManager:CarListRemoteDataManagerInputProtocol {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let jsonData = try JSON(data: data)
-                self.sendDataForCarList(jsonData: jsonData)
+                let carDataArray = self.sendDataForCarList(jsonData: jsonData)
+                remoteRequestHandler?.getDataFromRemoteDataManager(with: carDataArray)
+                
             }
             catch {
                 print("Error parsing data from CarListRemoteDataManagerInputProtocol: \(error)")
@@ -29,10 +31,18 @@ class CarListRemoteDataManager:CarListRemoteDataManagerInputProtocol {
     
     func sendDataForCarList(jsonData: JSON) -> [CarData] {
         var carDataArray = [CarData]()
-        let 
-        jsonData["listings"].forEach { (key, value) in
-            
+        let jsonArray = jsonData["listings"].arrayValue
+        jsonArray.forEach { (item) in
+            let carData = CarData(model: item["build"]["model"].stringValue,
+                                  price: item["price"].stringValue,
+                                  seats: item["build"]["std_seating"].stringValue,
+                                  status: item["inventory_type"].stringValue,
+                                  year: item["build"]["year"].stringValue,
+                                  dateReleased: item["first_seen_at"].stringValue,
+                                  type: item["buid"]["vehicle_type"].stringValue,
+                                  name: item["dealer"]["name"].stringValue)
+            carDataArray.append(carData)
         }
+        return carDataArray
     }
-    
 }

@@ -16,7 +16,6 @@ class CarListInteractor: CarListInteractorInputProtocol {
     var remoteDatamanager: CarListRemoteDataManagerInputProtocol?
 
     func getDataFromRemoteDataManager() {
-        print("2")
         remoteDatamanager?.readJSONFile()
         
     }
@@ -24,4 +23,7 @@ class CarListInteractor: CarListInteractorInputProtocol {
 
 extension CarListInteractor: CarListRemoteDataManagerOutputProtocol {
     // TODO: Implement use case methods
+    func getDataFromRemoteDataManager(with carDataArray: [CarData]) {
+        presenter?.getDataFromRemoteDataManager(with: carDataArray)
+    }
 }

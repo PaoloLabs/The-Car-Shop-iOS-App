@@ -12,6 +12,7 @@ import UIKit
 protocol CarListViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: CarListPresenterProtocol? { get set }
+    func getDataFromRemoteDataManager(with carDataArray: [CarData])
 }
 
 protocol CarListWireFrameProtocol: class {
@@ -32,7 +33,8 @@ protocol CarListPresenterProtocol: class {
 }
 
 protocol CarListInteractorOutputProtocol: class {
-// INTERACTOR -> PRESENTER
+    // INTERACTOR -> PRESENTER
+    func getDataFromRemoteDataManager(with carDataArray: [CarData])
 }
 
 protocol CarListInteractorInputProtocol: class {
@@ -56,6 +58,7 @@ protocol CarListRemoteDataManagerInputProtocol: class {
 
 protocol CarListRemoteDataManagerOutputProtocol: class {
     // REMOTEDATAMANAGER -> INTERACTOR
+    func getDataFromRemoteDataManager(with carDataArray: [CarData])
 }
 
 protocol CarListLocalDataManagerInputProtocol: class {
